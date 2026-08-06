@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Mono, Instrument_Serif, Manrope } from "next/font/google";
 import { SiteCursor } from "../components/site-cursor";
+import { I18nProvider } from "../lib/i18n";
 import "./globals.css";
 
 const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
@@ -16,8 +17,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${manrope.variable} ${instrument.variable} ${mono.variable}`}>
       <body>
-        <SiteCursor />
-        {children}
+        <I18nProvider>
+          <SiteCursor />
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );

@@ -29,8 +29,8 @@ export function SiteCursor() {
     const loop = () => {
       const target = targetRef.current;
       const pos = posRef.current;
-      pos.x += (target.x - pos.x) * 0.16;
-      pos.y += (target.y - pos.y) * 0.16;
+      pos.x += (target.x - pos.x) * 0.24;
+      pos.y += (target.y - pos.y) * 0.24;
       ring.style.transform = `translate(${pos.x}px, ${pos.y}px) translate(-50%, -50%)`;
       raf = requestAnimationFrame(loop);
     };

@@ -1,4 +1,5 @@
 export type Project = {
+  id: "glasses" | "shoes" | "watch" | "coffee" | "headphones";
   title: string;
   category: string;
   video: string;
@@ -9,11 +10,11 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  { title: "Glasses", category: "AI Product Film", video: "/showcases/glasses.mp4", previewVideo: "/showcases/glasses-preview.mp4", poster: "/showcases/glasses-poster.png", alt: "Animated glasses product advertisement", featured: true },
-  { title: "Nike / Shoes", category: "Motion Advertisement", video: "/showcases/shoes.mp4", previewVideo: "/showcases/shoes-preview.mp4", poster: "/showcases/shoes-poster.png", alt: "Nike shoes product advertisement" },
-  { title: "Rolex / Watch", category: "Instagram Campaign", video: "/showcases/rolex.mp4", previewVideo: "/showcases/rolex-preview.mp4", poster: "/showcases/watch-poster.png", alt: "Rolex watch product advertisement" },
-  { title: "Kaor / Coffee", category: "Launch Campaign", video: "/showcases/coffee.mp4", previewVideo: "/showcases/coffee-preview.mp4", poster: "/showcases/kaor-poster.png", alt: "Kaor coffee product advertisement" },
-  { title: "Marshall / Headphone", category: "Ecommerce Creative", video: "/showcases/headphones.mov", previewVideo: "/showcases/headphones-preview.mp4", poster: "/showcases/marshall-poster.png", alt: "Marshall headphone product advertisement" },
+  { id: "glasses", title: "Glasses", category: "AI Product Film", video: "/showcases/glasses.mp4", previewVideo: "/showcases/glasses-preview.mp4", poster: "/showcases/glasses-poster.png", alt: "Animated glasses product advertisement", featured: true },
+  { id: "shoes", title: "Nike / Shoes", category: "Motion Advertisement", video: "/showcases/shoes.mp4", previewVideo: "/showcases/shoes-preview.mp4", poster: "/showcases/shoes-poster.png", alt: "Nike shoes product advertisement" },
+  { id: "watch", title: "Rolex / Watch", category: "Instagram Campaign", video: "/showcases/rolex.mp4", previewVideo: "/showcases/rolex-preview.mp4", poster: "/showcases/watch-poster.png", alt: "Rolex watch product advertisement" },
+  { id: "coffee", title: "Kaor / Coffee", category: "Launch Campaign", video: "/showcases/coffee.mp4", previewVideo: "/showcases/coffee-preview.mp4", poster: "/showcases/kaor-poster.png", alt: "Kaor coffee product advertisement" },
+  { id: "headphones", title: "Marshall / Headphone", category: "Ecommerce Creative", video: "/showcases/headphones.mov", previewVideo: "/showcases/headphones-preview.mp4", poster: "/showcases/marshall-poster.png", alt: "Marshall headphone product advertisement" },
 ];
 
 export const pricingPlans = [
