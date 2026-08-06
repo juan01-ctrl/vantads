@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Mono, Instrument_Serif, Manrope } from "next/font/google";
+import { SiteCursor } from "../components/site-cursor";
 import "./globals.css";
 
 const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
@@ -14,7 +15,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${manrope.variable} ${instrument.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SiteCursor />
+        {children}
+      </body>
     </html>
   );
 }
