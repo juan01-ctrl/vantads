@@ -97,10 +97,10 @@ const NESTED = {
     },
     process: { label: "03 / Proceso", titleA: "DEL", titleB: "PRODUCTO", titleC: "A LA CAMPAÑA" },
     steps: [
-      ["01", "Dirección creativa", "Definimos el ángulo del producto, la audiencia, las referencias, el mood y la identidad visual."],
-      ["02", "Conceptos", "Desarrollamos múltiples hooks, escenas, tratamientos visuales y direcciones de movimiento."],
-      ["03", "Producción", "Generamos, refinamos, animamos, editamos y pulimos cada creativo."],
-      ["04", "Entrega", "Recibes anuncios verticales listos para publicar, organizados y preparados para testear."],
+      ["Dirección creativa", "Definimos el ángulo del producto, la audiencia, las referencias, el mood y la identidad visual."],
+      ["Conceptos", "Desarrollamos múltiples hooks, escenas, tratamientos visuales y direcciones de movimiento."],
+      ["Producción", "Generamos, refinamos, animamos, editamos y pulimos cada creativo."],
+      ["Entrega", "Recibes anuncios verticales listos para publicar, organizados y preparados para testear."],
     ],
     pricing: {
       label: "04 / Planes creativos mensuales",
