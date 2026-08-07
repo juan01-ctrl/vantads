@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Mono, Instrument_Serif, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SiteCursor } from "../components/site-cursor";
+import { SmoothScroll } from "../components/smooth-scroll";
 import { I18nProvider } from "../lib/i18n";
 import { Loader } from "../components/loader";
 import "./globals.css";
@@ -21,9 +22,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={`${manrope.variable} ${instrument.variable} ${mono.variable}`}>
       <body>
         <I18nProvider>
-          <Loader />
-          <SiteCursor />
-          {children}
+          <SmoothScroll>
+            <Loader />
+            <SiteCursor />
+            {children}
+          </SmoothScroll>
         </I18nProvider>
         <Analytics />
       </body>

@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLenis } from "lenis/react";
 import { PhoneIcon } from "./icons";
 import type { Project } from "../app/content";
 import { useI18n } from "../lib/i18n";
 
 export function ProjectCard({ project, className = "" }: { project: Project; className?: string }) {
   const { t } = useI18n();
+  const lenis = useLenis();
   const category = t(`projects.${project.id}.category`);
   const alt = t(`projects.${project.id}.alt`);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -80,15 +82,17 @@ export function ProjectCard({ project, className = "" }: { project: Project; cla
   useEffect(() => {
     if (!isOpen) return;
     document.body.style.overflow = "hidden";
+    lenis?.stop();
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") close();
     };
     window.addEventListener("keydown", closeOnEscape);
     return () => {
       document.body.style.overflow = "";
+      lenis?.start();
       window.removeEventListener("keydown", closeOnEscape);
     };
-  }, [isOpen]);
+  }, [isOpen, lenis]);
 
   const open = () => {
     const video = modalVideoRef.current;
