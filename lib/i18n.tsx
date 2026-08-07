@@ -154,7 +154,11 @@ export function getLang(): Lang {
 const I18nContext = createContext<{ lang: Lang; setLang: (l: Lang) => void; t: (key: string) => string; ta: (key: string) => readonly string[] }>({ lang: "en", setLang: () => {}, t: (k) => k, ta: (k) => [] });
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(() => getLang());
+  const [lang, setLangState] = useState<Lang>("en");
+
+  useEffect(() => {
+    setLangState(getLang());
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = lang;
