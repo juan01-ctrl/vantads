@@ -70,16 +70,29 @@ a { color: inherit; text-decoration: none; }
 .service-card:hover .service-icon { color: var(--accent); border-color: rgba(211,70,103,.6); box-shadow: 0 0 0 5px rgba(211,70,103,.12); transform: rotate(8deg); }
 .service-line, .service-icon-line { height: 1px; flex: 1; background: linear-gradient(90deg, rgba(211,70,103,.5), transparent); transform: scaleX(0); transform-origin: left; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
 .service-card:hover .service-line, .service-card:hover .service-icon-line { transform: scaleX(1); }
-.process-card { position: relative; transition: background-color .5s ease; }
-.process-card:hover { background: linear-gradient(180deg, rgba(211,70,103,.05), transparent 55%); }
-.process-number { position: absolute; right: 18px; top: 12px; font-family: var(--font-instrument), serif; font-size: 84px; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.06); transition: all .6s cubic-bezier(.2,.7,.2,1); }
-.process-card:hover .process-number { color: rgba(211,70,103,.25); -webkit-text-stroke: 1px rgba(211,70,103,.4); }
-.process-step { color: rgba(255,255,255,.35); transition: color .4s ease; }
-.process-card:hover .process-step { color: var(--accent); }
-.process-line { position: absolute; top: 0; left: 0; height: 2px; width: 0; background: linear-gradient(90deg, var(--accent), transparent); transition: width .6s cubic-bezier(.2,.7,.2,1); }
-.process-card:hover .process-line { width: 100%; }
-.process-arrow { position: absolute; right: 20px; bottom: 20px; color: rgba(255,255,255,.25); transition: color .4s ease, transform .4s ease; }
-.process-card:hover .process-arrow { color: var(--accent); transform: translate(4px, -4px); }
+.timeline { position: relative; list-style: none; padding: 0; margin: 0; }
+.timeline::before { content: ""; position: absolute; top: 6px; bottom: 6px; left: 7px; width: 1px; background: linear-gradient(180deg, var(--accent), rgba(255,255,255,.12)); transform: scaleY(0); transform-origin: top; animation: timeline-grow 1.5s .3s cubic-bezier(.2,.7,.2,1) forwards; }
+@keyframes timeline-grow { to { transform: scaleY(1); } }
+.timeline-item { position: relative; padding: 0 0 46px 40px; }
+.timeline-item:last-child { padding-bottom: 4px; }
+.timeline-item:nth-child(1) { --row: 1; }
+.timeline-item:nth-child(2) { --row: 2; }
+.timeline-item:nth-child(3) { --row: 3; }
+.timeline-item:nth-child(4) { --row: 4; }
+.timeline-dot { position: absolute; left: 0; top: 2px; }
+.timeline-dot-core { display: block; width: 15px; height: 15px; border: 1px solid rgba(211,70,103,.55); border-radius: 50%; background: var(--ink); opacity: 0; animation: timeline-dot-in .6s ease forwards; animation-delay: calc(.4s + var(--row) * .18s); transition: background-color .5s ease, box-shadow .5s ease, transform .5s cubic-bezier(.2,.7,.2,1); }
+@keyframes timeline-dot-in { to { opacity: 1; } }
+.timeline-item:hover .timeline-dot-core, .timeline-item.active .timeline-dot-core { background: var(--accent); box-shadow: 0 0 0 6px rgba(211,70,103,.12); transform: scale(1.15); }
+.timeline-body { opacity: 0; transform: translateY(14px); animation: timeline-body-in .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: calc(.5s + var(--row) * .18s); }
+@keyframes timeline-body-in { to { opacity: 1; transform: translateY(0); } }
+.timeline-step { color: rgba(255,255,255,.38); transition: color .4s ease; }
+.timeline-item:hover .timeline-step, .timeline-item.active .timeline-step { color: var(--accent); }
+.timeline-item.active { transition: opacity .4s ease; }
+.timeline-item.active:not(.current) { opacity: .55; }
+.timeline-item.current { opacity: 1; }
+.timeline-rule { height: 1px; flex: 1; background: linear-gradient(90deg, rgba(211,70,103,.45), transparent); transform: scaleX(0); transform-origin: left; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.timeline-item:hover .timeline-rule, .timeline-item.active .timeline-rule { transform: scaleX(1); }
+.timeline-item:hover h3, .timeline-item.active h3 { color: var(--accent); }
 .price-card { transition: transform .35s ease, border-color .35s ease; }
 .price-card:hover { transform: translateY(-5px); border-color: rgba(240,239,236,.35); }
 .phone-modal { animation: phone-modal-in .45s cubic-bezier(.2,.8,.2,1) both; }
