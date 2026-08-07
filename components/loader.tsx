@@ -13,7 +13,7 @@ export function Loader() {
   return (
     <div className={`loader ${done ? "loader--done" : ""}`} aria-hidden="true">
       <div className="loader-inner">
-        <img src="/vantadslogo.png" alt="" className="loader-brand-img" />
+        <img src="https://assets.vantads.studio/vantadslogo.png" alt="" className="loader-brand-img" />
         <span className="loader-line" />
         <p className="loader-sub">EST · 2026</p>
       </div>
