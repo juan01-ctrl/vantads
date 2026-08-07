@@ -7,7 +7,7 @@ export type Lang = "en" | "es";
 const NESTED = {
   en: {
     brand: "VANTA AI STUDIO",
-    nav: { studio: "Studio", services: "Services", work: "Work", pricing: "Pricing", contact: "Contact" },
+    nav: { studio: "Studio", services: "Services", work: "Work", pricing: "Pricing", contact: "Contact", info: "Info" },
     hero: {
       eyebrow: "AI advertising\nstudio",
       h1a: "WE MAKE",
@@ -69,10 +69,37 @@ const NESTED = {
     contact: { label: "06 / Start a project", titleA: "LET’S MAKE", titleB: "YOUR PRODUCT", titleC: "IMPOSSIBLE", titleD: "TO IGNORE", sub: "Tell us about your brand, product, and campaign. We’ll turn it into premium visual content built for attention.", cta: "Start a project", view: "View our work" },
     footer: { addresses: "Vanta AI St. / Buenos Aires / Available worldwide", instagram: "Instagram" },
     modal: { phoneView: "Phone View", clickToOpen: "Click to open phone view", open: "Open preview", close: "Close video preview" },
+    info: {
+      label: "Info",
+      titleA: "WHAT WE DO",
+      titleB: "AND WHAT IT COSTS",
+      intro: "A plain breakdown of Vanta AI Studio: the work we produce, how we work, what you get, and what it costs. No fluff.",
+      whatLabel: "01 / What we do",
+      howLabel: "02 / How it works",
+      priceLabel: "03 / Pricing",
+      priceNote: "All prices in USD, billed monthly.",
+      specsLabel: "04 / Delivery & specs",
+      contactLabel: "05 / Contact",
+      specs: [
+        ["Format", "Vertical 9:16, Instagram-ready"],
+        ["Length", "Up to 15 seconds per ad"],
+        ["Turnaround", "First concepts within 7 days"],
+        ["Revisions", "1–2 rounds per video, depending on plan"],
+        ["Guarantee", "14-day money-back guarantee"],
+      ],
+      backHome: "Back to home",
+      start: "Start",
+      contactIntro: "Tell us about your brand, product, and campaign.",
+      plans: [
+        { name: "Essential", volume: "10 videos / month", price: "$390 / month", perVideo: "$39 / video", features: "10 vertical product ads · up to 15 seconds · 1 revision round · 9:16 delivery · basic motion typography" },
+        { name: "Growth", volume: "20 videos / month", price: "$585 / month", perVideo: "$29.25 / video", features: "20 vertical product ads · multiple hooks · 2 revision rounds · premium motion design · creative direction · priority production" },
+        { name: "Scale", volume: "+40 videos / month", price: "From $858 / month", perVideo: "$21.45 / video", features: "40+ vertical product ads · multiple products · 2 revision rounds · advanced motion · priority support · campaign-ready exports" },
+      ],
+    },
   },
   es: {
     brand: "VANTA AI STUDIO",
-    nav: { studio: "Estudio", services: "Servicios", work: "Trabajo", pricing: "Precios", contact: "Contacto" },
+    nav: { studio: "Estudio", services: "Servicios", work: "Trabajo", pricing: "Precios", contact: "Contacto", info: "Info" },
     hero: {
       eyebrow: "Estudio de\nIA creativa",
       h1a: "CREAMOS",
@@ -135,6 +162,33 @@ const NESTED = {
     contact: { label: "06 / Empezar un proyecto", titleA: "HAGAMOS", titleB: "TU PRODUCTO", titleC: "IMPESIBLE", titleD: "DE IGNORAR", sub: "Contanos sobre tu marca, tu producto y tu campaña. Lo convertimos en contenido visual premium construido para atraer la atención.", cta: "Empezar un proyecto", view: "Ver nuestro trabajo" },
     footer: { addresses: "Vanta AI · Buenos Aires · Disponible mundialmente", instagram: "Instagram" },
     modal: { phoneView: "Vista móvil", clickToOpen: "Tocá para abrir la vista móvil", open: "Abrir preview", close: "Cerrar preview" },
+    info: {
+      label: "Info",
+      titleA: "QUÉ HACEMOS",
+      titleB: "Y CUÁNTO CUESTA",
+      intro: "Un desglose claro de Vanta AI Studio: el trabajo que producimos, cómo trabajamos, qué obtenés y cuánto cuesta. Sin vueltas.",
+      whatLabel: "01 / Qué hacemos",
+      howLabel: "02 / Cómo trabajamos",
+      priceLabel: "03 / Precios",
+      priceNote: "Todos los precios en pesos argentinos (ARS), cobrados mensualmente. 1 USD = 1500 ARS.",
+      specsLabel: "04 / Entrega y especificaciones",
+      contactLabel: "05 / Contacto",
+      specs: [
+        ["Formato", "Vertical 9:16, listo para Instagram"],
+        ["Duración", "Hasta 15 segundos por aviso"],
+        ["Tiempo de entrega", "Primeros conceptos en 7 días"],
+        ["Revisiones", "1–2 rondas por video, según el plan"],
+        ["Garantía", "Garantía de devolución de 14 días"],
+      ],
+      backHome: "Volver al inicio",
+      start: "Empezar",
+      contactIntro: "Contanos sobre tu marca, tu producto y tu campaña.",
+      plans: [
+        { name: "Essential", volume: "10 videos / mes", price: "ARS $585.000 / mes", perVideo: "ARS $58.500 / video", features: "10 anuncios de producto verticales · hasta 15 segundos · 1 ronda de revisiones · entrega 9:16 · tipografía de movimiento básica" },
+        { name: "Growth", volume: "20 videos / mes", price: "ARS $877.500 / mes", perVideo: "ARS $43.875 / video", features: "20 anuncios de producto verticales · múltiples hooks · 2 rondas de revisiones · motion design premium · dirección creativa · producción prioritaria" },
+        { name: "Scale", volume: "+40 videos / mes", price: "Desde ARS $1.287.000 / mes", perVideo: "ARS $32.175 / video", features: "40+ anuncios de producto verticales · múltiples productos · 2 rondas de revisiones · motion avanzado · soporte prioritario · exports listos para campaña" },
+      ],
+    },
   },
 } as const;
 

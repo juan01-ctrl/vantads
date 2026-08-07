@@ -6,12 +6,13 @@ import { LangSwitcher } from "./lang-switcher";
 import { useI18n } from "../lib/i18n";
 
 const linkKeys = [{ label: "studio", href: "#studio" }, { label: "services", href: "#services" }, { label: "work", href: "#work" }, { label: "pricing", href: "#pricing" }, { label: "contact", href: "#contact" }];
+const infoKeys = [{ label: "info", href: "/info", noIndex: true }];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [leaving, setLeaving] = useState(false);
   const { t, lang } = useI18n();
-  const links = linkKeys.map((l) => ({ ...l, label: t(`nav.${l.label}`) }));
+  const links = [...linkKeys.map((l) => ({ ...l, label: t(`nav.${l.label}`) })), ...infoKeys.map((l) => ({ ...l, label: t(`nav.${l.label}`) }))];
   useEffect(() => { const lock = open ? "hidden" : ""; document.body.style.overflow = lock; document.documentElement.style.overflow = lock; return () => { document.body.style.overflow = ""; document.documentElement.style.overflow = ""; }; }, [open]);
   const close = () => { setLeaving(true); window.setTimeout(() => { setOpen(false); setLeaving(false); }, 450); };
   return <header className="absolute inset-x-0 top-0 z-20 px-5 py-6 sm:px-8 sm:py-7">
