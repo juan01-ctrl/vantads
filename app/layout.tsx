@@ -13,6 +13,7 @@ const mono = DM_Mono({ variable: "--font-mono", subsets: ["latin"], weight: ["40
 export const metadata: Metadata = {
   title: "Vanta AI Studio | Product ads made to move",
   description: "Premium AI-generated Instagram ads for ecommerce brands.",
+  icons: { icon: "/vantadslogodark.png" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

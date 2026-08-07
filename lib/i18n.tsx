@@ -55,6 +55,10 @@ const NESTED = {
       customLink: "Contact us",
       customTail: "for a tailored production plan.",
       perMonth: "/ month",
+      mail: {
+        subject: "I want to start the {plan} plan",
+        body: "Hi Vanta,\n\nI'd like to start the {plan} plan ({volume}).\n\nMy products (IG, ecommerce shop, etc): \n\nPlease send me the details to get started.\n\nThanks!",
+      },
     },
     plans: {
       essential: { name: "Essential", volume: "10 videos / month", description: "For brands that need a consistent monthly presence.", price: "$390 / month", perVideo: "$39 / video", discount: "Standard rate", cta: "Start Essential", features: ["10 vertical product ads", "Up to 15 seconds each", "1 revision round per video", "Instagram-ready 9:16 delivery", "Basic motion typography", "Standard delivery schedule"] },
@@ -117,6 +121,10 @@ const NESTED = {
       customLink: "Contactanos",
       customTail: "para un plan de producción a medida.",
       perMonth: "/ mes",
+      mail: {
+        subject: "Quiero empezar con el plan {plan}",
+        body: "Hola Vanta,\n\nQuiero empezar con el plan {plan} ({volume}).\n\nMis productos (IG, tienda ecommerce, etc): \n\nEnvíenme los detalles para comenzar.\n\n¡Gracias!",
+      },
     },
     plans: {
       essential: { name: "Essential", volume: "10 videos / mes", description: "Para marcas que necesitan una presencia mensual consistente.", price: "$390 / mes", perVideo: "$39 / video", discount: "Tarifa estándar", cta: "Empezar Essential", features: ["10 anuncios de producto verticales", "Hasta 15 segundos cada uno", "1 ronda de revisiones por video", "Entrega 9:16 lista para Instagram", "Tipografía de movimiento básica", "Calendario de entrega estándar"] },

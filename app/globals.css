@@ -43,6 +43,7 @@ a { color: inherit; text-decoration: none; }
 .loader--done { opacity: 0; visibility: hidden; }
 .loader-inner { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .loader-brand { font-family: var(--font-mono), monospace; font-size: 12px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--paper); animation: loader-fade 1s ease both; }
+.loader-brand-img { height: 34px; width: auto; object-fit: contain; animation: loader-fade 1s ease both; }
 .loader-line { display: block; width: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); animation: loader-grow .8s cubic-bezier(.2,.8,.2,1) both; }
 .loader-sub { font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: .2em; color: var(--muted); opacity: 0; animation: loader-fade 1s .3s ease both; }
 @keyframes loader-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
@@ -112,5 +113,26 @@ a { color: inherit; text-decoration: none; }
 @keyframes pointer-ring { 0%, 40% { opacity: 0; transform: scale(.65); } 58% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.6); } }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes bob { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(4px); } }
+.menu-overlay { position: fixed; inset: 0; z-index: 20; display: flex; flex-direction: column; justify-content: flex-start; overflow-y: auto; background: linear-gradient(180deg, #0c0c0d 0%, #101012 100%); opacity: 0; animation: menu-overlay-in .45s cubic-bezier(.2,.7,.2,1) forwards; }
+.menu-overlay--leave { animation: menu-overlay-out .4s cubic-bezier(.5,0,.8,.4) forwards; }
+.menu-overlay::before { content: ""; position: absolute; inset: 0; opacity: .14; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E"); mix-blend-mode: overlay; }
+.menu-overlay::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 40% at 80% 0%, rgba(211,70,103,.08), transparent 60%); }
+@keyframes menu-overlay-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes menu-overlay-out { to { opacity: 0; } }
+.menu-close { display: inline-flex; animation: menu-close-in .3s ease both; }
+@keyframes menu-close-in { from { transform: rotate(-90deg); opacity: 0; } to { transform: rotate(0); opacity: 1; } }
+.menu-close--leave { animation: menu-close-out .35s ease both; }
+@keyframes menu-close-out { to { transform: rotate(90deg); opacity: 0; } }
+.menu-links { display: flex; flex-direction: column; }
+.menu-link { position: relative; display: flex; align-items: baseline; gap: 18px; padding: 15px 4px; border-bottom: 1px solid rgba(240,239,236,.08); color: var(--paper); opacity: 0; transform: translateY(18px); animation: menu-link-in .5s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: calc(.08s + var(--i) * .06s); transition: color .25s ease, padding-left .35s cubic-bezier(.2,.7,.2,1); }
+.menu-overlay--leave .menu-link { animation: menu-link-out .3s cubic-bezier(.5,0,.8,.4) forwards; animation-delay: calc(var(--i) * .03s); }
+.menu-link:hover { color: var(--accent); padding-left: 12px; }
+.menu-link-index { font-family: var(--font-mono), monospace; font-size: 10px; letter-spacing: .16em; color: var(--accent); }
+.menu-link-text { font-family: var(--font-instrument), serif; font-size: 40px; line-height: 1.05; letter-spacing: -.02em; }
+.menu-link-arrow { margin-left: auto; font-size: 14px; opacity: 0; transform: translate(-6px, 6px); transition: opacity .3s ease, transform .4s cubic-bezier(.2,.7,.2,1); }
+.menu-link:hover .menu-link-arrow { opacity: 1; transform: translate(0, 0); }
+@keyframes menu-link-in { to { opacity: 1; transform: translateY(0); } }
+@keyframes menu-link-out { to { opacity: 0; transform: translateY(12px); } }
+.menu-foot { margin-top: 56px; opacity: 0; animation: menu-link-in .5s .5s ease both; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
 @media (max-width: 767px) { .site-cursor { display: none !important; } body, body a, body button, body input, body textarea, body select, body [data-cursor], body label { cursor: auto; } .site-shell { width: calc(100% - 16px); } }
