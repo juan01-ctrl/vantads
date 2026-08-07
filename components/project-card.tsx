@@ -94,6 +94,7 @@ export function ProjectCard({ project, className = "" }: { project: Project; cla
     const video = modalVideoRef.current;
     if (video) {
       video.muted = false;
+      video.currentTime = 0;
       video.play().catch(console.error);
     }
     setIsOpen(true);
