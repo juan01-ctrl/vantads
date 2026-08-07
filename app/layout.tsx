@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Mono, Instrument_Serif, Manrope } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { SiteCursor } from "../components/site-cursor";
 import { I18nProvider } from "../lib/i18n";
 import { Loader } from "../components/loader";
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <SiteCursor />
           {children}
         </I18nProvider>
+        <Analytics />
       </body>
     </html>
   );
