@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { DM_Mono, Instrument_Serif, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SiteCursor } from "../components/site-cursor";
@@ -21,6 +22,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${manrope.variable} ${instrument.variable} ${mono.variable}`}>
       <body>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZQSWQESVK2" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZQSWQESVK2');`}
+        </Script>
         <I18nProvider>
           <SmoothScroll>
             <Loader />
