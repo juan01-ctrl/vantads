@@ -9,7 +9,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) { return <p c
 export function InfoPage() {
   const { t, ta } = useI18n();
   const svc = ta("svc") as unknown as { title: string; text: string }[];
-  const steps = ta("steps") as unknown as [string, string][];
+  const process = ta("info.process") as unknown as [string, string, string][];
   const specs = ta("info.specs") as unknown as [string, string][];
   const plans = ta("info.plans") as unknown as { name: string; volume: string; price: string; perVideo: string; features: string }[];
 
@@ -30,9 +30,9 @@ export function InfoPage() {
     </section>
 
     <section className="border-t border-white/[.07] px-5 py-12 sm:px-8">
-      <SectionLabel>{t("info.howLabel")}</SectionLabel>
+      <div className="flex flex-wrap items-baseline justify-between gap-3"><SectionLabel>{t("info.howLabel")}</SectionLabel><p className="max-w-[320px] text-[12px] leading-[1.5] text-[#8a8986]">{t("info.howIntro")}</p></div>
       <ol className="mt-10 space-y-0">
-        {steps.map(([title, text], i) => <li key={i} className="flex flex-col gap-2 border-b border-white/[.07] py-6 md:flex-row md:items-baseline md:gap-10"><span className="font-mono text-[11px] tracking-[.14em] text-[#d34667] md:w-14">{String(i + 1).padStart(2, "0")}</span><h4 className="md:w-64 text-[17px] font-medium tracking-[-.02em] text-white">{title}</h4><p className="max-w-[460px] text-[12px] leading-[1.55] text-[#8a8986]">{text}</p></li>)}
+        {process.map(([time, title, text], i) => <li key={i} className="grid gap-2 border-b border-white/[.07] py-6 md:grid-cols-[140px_240px_1fr] md:items-baseline md:gap-10"><span className="font-mono text-[11px] uppercase tracking-[.14em] text-[#d34667]">{time}</span><h4 className="text-[17px] font-medium tracking-[-.02em] text-white">{title}</h4><p className="max-w-[460px] text-[12px] leading-[1.55] text-[#8a8986]">{text}</p></li>)}
       </ol>
     </section>
 
@@ -57,7 +57,6 @@ export function InfoPage() {
       <SectionLabel>{t("info.contactLabel")}</SectionLabel>
       <p className="mt-6 max-w-[380px] text-[14px] leading-[1.6] text-[#aaa7a3]">{t("info.contactIntro")}</p>
       <a href="mailto:hello@vantads.studio" className="mt-10 inline-flex items-center gap-4 border-b border-white/30 pb-3 text-[12px] uppercase tracking-[.1em] transition-colors hover:border-[#d34667] hover:text-[#d34667]">hello@vantads.studio <span>→</span></a>
-      <a href="/" className="mt-16 inline-flex items-center gap-2 text-[11px] text-[#8a8986] hover:text-white"><ArrowIcon className="h-4 w-4 -scale-x-100" />{t("info.backHome")}</a>
     </section>
 
     <footer className="border-t border-white/[.07] px-5 py-7 sm:px-8"><p className="eyebrow">© {new Date().getFullYear()} {t("brand")} · {t("footer.addresses")}</p></footer>
