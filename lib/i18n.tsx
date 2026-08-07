@@ -54,9 +54,10 @@ const NESTED = {
       custom: "Need a custom volume, launch campaign, or one-off project?",
       customLink: "Contact us",
       customTail: "for a tailored production plan.",
+      perMonth: "/ month",
     },
     plans: {
-      essential: { name: "Essential", volume: "10 videos / month", description: "For brands that need a consistent monthly presence.", price: "$390 / month", perVideo: "$39 / video", discount: "Standard rate", cta: "Start Essential", features: ["10 vertical product ads", "Up to 15 seconds each", "1 product or campaign focus", "1 revision round per video", "Instagram-ready 9:16 delivery", "Basic motion typography", "Standard delivery schedule"] },
+      essential: { name: "Essential", volume: "10 videos / month", description: "For brands that need a consistent monthly presence.", price: "$390 / month", perVideo: "$39 / video", discount: "Standard rate", cta: "Start Essential", features: ["10 vertical product ads", "Up to 15 seconds each", "1 revision round per video", "Instagram-ready 9:16 delivery", "Basic motion typography", "Standard delivery schedule"] },
       growth: { name: "Growth", volume: "20 videos / month", description: "For ecommerce brands actively testing and scaling creative.", price: "$585 / month", perVideo: "$29.25 / video", discount: "Save 25%", cta: "Choose Growth", features: ["20 vertical product ads", "Up to 15 seconds each", "Multiple hooks and variations", "2 revision rounds per video", "Premium motion design", "Creative direction included", "Priority production", "Campaign-ready exports"] },
       scale: { name: "Scale", volume: "+40 videos / month", description: "For brands that need a high volume of fresh campaign creatives.", price: "From $858 / month", perVideo: "$21.45 / video", discount: "Save 45%", cta: "Scale With Vanta", features: ["40+ vertical product ads", "Multiple products or campaigns", "Hook and concept variations", "2 revision rounds per video", "Advanced motion and editing", "Priority creative support", "Organized monthly production pipeline", "Paid social and organic formats"] },
     },
@@ -115,9 +116,10 @@ const NESTED = {
       custom: "¿Necesitas un volumen a medida, una campaña de lanzamiento o un proyecto puntual?",
       customLink: "Contactanos",
       customTail: "para un plan de producción a medida.",
+      perMonth: "/ mes",
     },
     plans: {
-      essential: { name: "Essential", volume: "10 videos / mes", description: "Para marcas que necesitan una presencia mensual consistente.", price: "$390 / mes", perVideo: "$39 / video", discount: "Tarifa estándar", cta: "Empezar Essential", features: ["10 anuncios de producto verticales", "Hasta 15 segundos cada uno", "1 producto o categoría", "1 ronda de revisiones por video", "Entrega 9:16 lista para Instagram", "Tipografía de movimiento básica", "Calendario de entrega estándar"] },
+      essential: { name: "Essential", volume: "10 videos / mes", description: "Para marcas que necesitan una presencia mensual consistente.", price: "$390 / mes", perVideo: "$39 / video", discount: "Tarifa estándar", cta: "Empezar Essential", features: ["10 anuncios de producto verticales", "Hasta 15 segundos cada uno", "1 ronda de revisiones por video", "Entrega 9:16 lista para Instagram", "Tipografía de movimiento básica", "Calendario de entrega estándar"] },
       growth: { name: "Growth", volume: "20 videos / mes", description: "Para ecommerce que testea y escala creativos activamente.", price: "$585 / mes", perVideo: "$29.25 / video", discount: "Ahorrá 25%", cta: "Elegir Growth", features: ["20 anuncios de producto verticales", "Hasta 15 segundos cada uno", "Múltiples hooks y variaciones", "2 rondas de revisiones por video", "Motion design premium", "Dirección creativa incluida", "Producción prioritaria", "Exports listos para campaña"] },
       scale: { name: "Scale", volume: "+40 videos / mes", description: "Para marcas que necesitan alto volumen de creativos frescos.", price: "Desde $858 / mes", perVideo: "$21.45 / video", discount: "Ahorrá 45%", cta: "Escalar con Vanta", features: ["40+ anuncios de producto verticales", "Múltiples productos o campañas", "Variaciones de hook y concepto", "2 rondas de revisiones por video", "Motion y edición avanzada", "Soporte creativo prioritario", "Pipeline mensual organizado", "Formatos para pauta y orgánico"] },
     },
