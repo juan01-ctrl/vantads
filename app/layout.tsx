@@ -13,7 +13,7 @@ const instrument = Instrument_Serif({ variable: "--font-instrument", subsets: ["
 const mono = DM_Mono({ variable: "--font-mono", subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  title: "Vanta AI Studio | Product ads made to move",
+  title: "Vantads AI Studio | Product ads made to move",
   description: "Premium AI-generated Instagram ads for ecommerce brands.",
   icons: { icon: "https://assets.vantads.studio/vantadslogodark.png" },
 };

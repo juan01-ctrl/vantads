@@ -11,7 +11,7 @@ export default function NotFound() {
         href="#studio"
         className="inline-flex items-center gap-4 border-b border-white/30 pb-3 text-[12px] uppercase tracking-[.1em] text-white transition-colors hover:border-[#d34667] hover:text-[#d34667]"
       >
-        Back to Vanta AI Studio <ArrowIcon className="h-4 w-4" />
+        Back to Vantads AI Studio <ArrowIcon className="h-4 w-4" />
       </a>
     </main>
   );

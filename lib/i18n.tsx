@@ -6,7 +6,7 @@ export type Lang = "en" | "es";
 
 const NESTED = {
   en: {
-    brand: "VANTA AI STUDIO",
+    brand: "VANTADS AI STUDIO",
     nav: { studio: "Studio", services: "Services", work: "Work", pricing: "Pricing", contact: "Contact", info: "Info" },
     hero: {
       eyebrow: "AI advertising\nstudio",
@@ -57,23 +57,23 @@ const NESTED = {
       perMonth: "/ month",
       mail: {
         subject: "I want to start the {plan} plan",
-        body: "Hi Vanta,\n\nI'd like to start the {plan} plan ({volume}).\n\nMy products (IG, ecommerce shop, etc): \n\nPlease send me the details to get started.\n\nThanks!",
+        body: "Hi Vantads,\n\nI'd like to start the {plan} plan ({volume}).\n\nMy products (IG, ecommerce shop, etc): \n\nPlease send me the details to get started.\n\nThanks!",
       },
     },
     plans: {
-      essential: { name: "Essential", volume: "10 videos / month", description: "For brands that need a consistent monthly presence.", price: "$390 / month", perVideo: "$39 / video", discount: "Standard rate", cta: "Start Essential", features: ["20 product images", "10 vertical product ads", "Up to 20 seconds each", "1 revision round per video", "Instagram-ready 9:16 delivery", "Basic motion typography", "Standard delivery schedule"] },
-      growth: { name: "Growth", volume: "20 videos / month", description: "For ecommerce brands actively testing and scaling creative.", price: "$585 / month", perVideo: "$29.25 / video", discount: "Save 25%", cta: "Choose Growth", features: ["35 product images", "20 vertical product ads", "Up to 20 seconds each", "Multiple hooks and variations", "2 revision rounds per video", "Premium motion design", "Creative direction included", "Priority production", "Campaign-ready exports"] },
-      scale: { name: "Scale", volume: "+40 videos / month", description: "For brands that need a high volume of fresh campaign creatives.", price: "From $858 / month", perVideo: "$21.45 / video", discount: "Save 45%", cta: "Scale With Vanta", features: ["60 product images", "40+ vertical product ads", "Multiple products or campaigns", "Hook and concept variations", "2 revision rounds per video", "Advanced motion and editing", "Priority creative support", "Organized monthly production pipeline", "Paid social and organic formats"] },
+      essential: { name: "Essential", volume: "10 videos / month", description: "For brands that need a consistent monthly presence.", price: "$390 / month", perVideo: "$39 / video", discount: "Standard rate", cta: "Start Essential", features: ["20 product images", "10 vertical product ads", "Up to 30 seconds each", "1 revision round per video", "Instagram-ready 9:16 delivery", "Basic motion typography", "Standard delivery schedule"] },
+      growth: { name: "Growth", volume: "20 videos / month", description: "For ecommerce brands actively testing and scaling creative.", price: "$585 / month", perVideo: "$29.25 / video", discount: "Save 25%", cta: "Choose Growth", features: ["35 product images", "20 vertical product ads", "Up to 30 seconds each", "Multiple hooks and variations", "2 revision rounds per video", "Premium motion design", "Creative direction included", "Priority production", "Campaign-ready exports"] },
+      scale: { name: "Scale", volume: "+40 videos / month", description: "For brands that need a high volume of fresh campaign creatives.", price: "From $858 / month", perVideo: "$21.45 / video", discount: "Save 45%", cta: "Scale With Vantads", features: ["60 product images", "40+ vertical product ads", "Multiple products or campaigns", "Hook and concept variations", "2 revision rounds per video", "Advanced motion and editing", "Priority creative support", "Organized monthly production pipeline", "Paid social and organic formats"] },
     },
-    signal: { label: "05 / The signal", titleA: "CREATIVE", titleB: "THAT", titleC: "PERFORMS", adv: "The advantage", advText: "Faster, better creative.\nA motion system that performs.", q1: "“Vanta turned a single product into an entire month of premium creative.”", q1by: "— Ecommerce founder", q2: "“The final videos looked like a full production campaign without the traditional production process.”", q2by: "— Brand director" },
+    signal: { label: "05 / The signal", titleA: "CREATIVE", titleB: "THAT", titleC: "PERFORMS", adv: "The advantage", advText: "Faster, better creative.\nA motion system that performs.", q1: "“Vantads turned a single product into an entire month of premium creative.”", q1by: "— Ecommerce founder", q2: "“The final videos looked like a full production campaign without the traditional production process.”", q2by: "— Brand director" },
     contact: { label: "06 / Start a project", titleA: "LET’S MAKE", titleB: "YOUR PRODUCT", titleC: "IMPOSSIBLE", titleD: "TO IGNORE", sub: "Tell us about your brand, product, and campaign. We’ll turn it into premium visual content built for attention.", cta: "Start a project", view: "View our work" },
-    footer: { addresses: "Vanta AI St. / Buenos Aires / Available worldwide", instagram: "Instagram" },
+    footer: { addresses: "Vantads AI St. / Buenos Aires / Available worldwide", instagram: "Instagram" },
     modal: { phoneView: "Phone View", clickToOpen: "Click to open phone view", open: "Open preview", close: "Close video preview" },
     info: {
       label: "Info",
       titleA: "WHAT WE DO",
       titleB: "AND WHAT IT COSTS",
-      intro: "A plain breakdown of Vanta AI Studio: the work we produce, how we work, what you get, and what it costs. No fluff.",
+      intro: "A plain breakdown of Vantads AI Studio: the work we produce, how we work, what you get, and what it costs. No fluff.",
       whatLabel: "01 / What we do",
       howLabel: "02 / How it works",
       howIntro: "This is exactly what happens once we start working together, from kickoff to the monthly delivery.",
@@ -90,7 +90,7 @@ const NESTED = {
       contactLabel: "05 / Contact",
       specs: [
         ["Format", "Vertical 9:16, Instagram-ready"],
-        ["Length", "Up to 20 seconds per ad"],
+        ["Length", "Up to 30 seconds per ad"],
         ["Turnaround", "First concepts within 7 days"],
         ["Revisions", "1–2 rounds per video, depending on plan"],
         ["Guarantee", "14-day money-back guarantee"],
@@ -99,14 +99,14 @@ const NESTED = {
       start: "Start",
       contactIntro: "Tell us about your brand, product, and campaign.",
       plans: [
-        { name: "Essential", volume: "10 videos / month", price: "$390 / month", perVideo: "$39 / video", features: "20 product images · 10 vertical product ads · up to 20 seconds · 1 revision round · 9:16 delivery · basic motion typography" },
+        { name: "Essential", volume: "10 videos / month", price: "$390 / month", perVideo: "$39 / video", features: "20 product images · 10 vertical product ads · up to 30 seconds · 1 revision round · 9:16 delivery · basic motion typography" },
         { name: "Growth", volume: "20 videos / month", price: "$585 / month", perVideo: "$29.25 / video", features: "35 product images · 20 vertical product ads · multiple hooks · 2 revision rounds · premium motion design · creative direction · priority production" },
         { name: "Scale", volume: "+40 videos / month", price: "From $858 / month", perVideo: "$21.45 / video", features: "60 product images · 40+ vertical product ads · multiple products · 2 revision rounds · advanced motion · priority support · campaign-ready exports" },
       ],
     },
   },
   es: {
-    brand: "VANTA AI STUDIO",
+    brand: "VANTADS AI STUDIO",
     nav: { studio: "Estudio", services: "Servicios", work: "Trabajo", pricing: "Precios", contact: "Contacto", info: "Info" },
     hero: {
       eyebrow: "Estudio de\nIA creativa",
@@ -158,23 +158,23 @@ const NESTED = {
       perMonth: "/ mes",
       mail: {
         subject: "Quiero empezar con el plan {plan}",
-        body: "Hola Vanta,\n\nQuiero empezar con el plan {plan} ({volume}).\n\nMis productos (IG, tienda ecommerce, etc): \n\nEnvíenme los detalles para comenzar.\n\n¡Gracias!",
+        body: "Hola Vantads,\n\nQuiero empezar con el plan {plan} ({volume}).\n\nMis productos (IG, tienda ecommerce, etc): \n\nEnvíenme los detalles para comenzar.\n\n¡Gracias!",
       },
     },
     plans: {
-      essential: { name: "Essential", volume: "10 videos / mes", description: "Para marcas que necesitan una presencia mensual consistente.", price: "$390 / mes", perVideo: "$39 / video", discount: "Tarifa estándar", cta: "Empezar Essential", features: ["20 imágenes de producto", "10 anuncios de producto verticales", "Hasta 20 segundos cada uno", "1 ronda de revisiones por video", "Entrega 9:16 lista para Instagram", "Tipografía de movimiento básica", "Calendario de entrega estándar"] },
-      growth: { name: "Growth", volume: "20 videos / mes", description: "Para ecommerce que testea y escala creativos activamente.", price: "$585 / mes", perVideo: "$29.25 / video", discount: "Ahorrá 25%", cta: "Elegir Growth", features: ["35 imágenes de producto", "20 anuncios de producto verticales", "Hasta 20 segundos cada uno", "Múltiples hooks y variaciones", "2 rondas de revisiones por video", "Motion design premium", "Dirección creativa incluida", "Producción prioritaria", "Exports listos para campaña"] },
-      scale: { name: "Scale", volume: "+40 videos / mes", description: "Para marcas que necesitan alto volumen de creativos frescos.", price: "Desde $858 / mes", perVideo: "$21.45 / video", discount: "Ahorrá 45%", cta: "Escalar con Vanta", features: ["60 imágenes de producto", "40+ anuncios de producto verticales", "Múltiples productos o campañas", "Variaciones de hook y concepto", "2 rondas de revisiones por video", "Motion y edición avanzada", "Soporte creativo prioritario", "Pipeline mensual organizado", "Formatos para pauta y orgánico"] },
+      essential: { name: "Essential", volume: "10 videos / mes", description: "Para marcas que necesitan una presencia mensual consistente.", price: "$390 / mes", perVideo: "$39 / video", discount: "Tarifa estándar", cta: "Empezar Essential", features: ["20 imágenes de producto", "10 anuncios de producto verticales", "Hasta 30 segundos cada uno", "1 ronda de revisiones por video", "Entrega 9:16 lista para Instagram", "Tipografía de movimiento básica", "Calendario de entrega estándar"] },
+      growth: { name: "Growth", volume: "20 videos / mes", description: "Para ecommerce que testea y escala creativos activamente.", price: "$585 / mes", perVideo: "$29.25 / video", discount: "Ahorrá 25%", cta: "Elegir Growth", features: ["35 imágenes de producto", "20 anuncios de producto verticales", "Hasta 30 segundos cada uno", "Múltiples hooks y variaciones", "2 rondas de revisiones por video", "Motion design premium", "Dirección creativa incluida", "Producción prioritaria", "Exports listos para campaña"] },
+      scale: { name: "Scale", volume: "+40 videos / mes", description: "Para marcas que necesitan alto volumen de creativos frescos.", price: "Desde $858 / mes", perVideo: "$21.45 / video", discount: "Ahorrá 45%", cta: "Escalar con Vantads", features: ["60 imágenes de producto", "40+ anuncios de producto verticales", "Múltiples productos o campañas", "Variaciones de hook y concepto", "2 rondas de revisiones por video", "Motion y edición avanzada", "Soporte creativo prioritario", "Pipeline mensual organizado", "Formatos para pauta y orgánico"] },
     },
-    signal: { label: "05 / La señal", titleA: "CREATIVO", titleB: "QUE", titleC: "RINDE", tag: "La ventaja", advText: "Producción creativa más rápida.\nMás variaciones para testear.\nMenos overhead.", q1: "“Vanta nos ayudó a convertir un solo producto en un mes completo de creativo premium.”", q1by: "— Fundador de ecommerce", q2: "“Los videos finales parecían una producción de campaña completa, sin el proceso tradicional.”", q2by: "— Director de marca" },
+    signal: { label: "05 / La señal", titleA: "CREATIVO", titleB: "QUE", titleC: "RINDE", tag: "La ventaja", advText: "Producción creativa más rápida.\nMás variaciones para testear.\nMenos overhead.", q1: "“Vantads nos ayudó a convertir un solo producto en un mes completo de creativo premium.”", q1by: "— Fundador de ecommerce", q2: "“Los videos finales parecían una producción de campaña completa, sin el proceso tradicional.”", q2by: "— Director de marca" },
     contact: { label: "06 / Empezar un proyecto", titleA: "HAGAMOS", titleB: "TU PRODUCTO", titleC: "IMPESIBLE", titleD: "DE IGNORAR", sub: "Contanos sobre tu marca, tu producto y tu campaña. Lo convertimos en contenido visual premium construido para atraer la atención.", cta: "Empezar un proyecto", view: "Ver nuestro trabajo" },
-    footer: { addresses: "Vanta AI · Buenos Aires · Disponible mundialmente", instagram: "Instagram" },
+    footer: { addresses: "Vantads AI · Buenos Aires · Disponible mundialmente", instagram: "Instagram" },
     modal: { phoneView: "Vista móvil", clickToOpen: "Tocá para abrir la vista móvil", open: "Abrir preview", close: "Cerrar preview" },
     info: {
       label: "Info",
       titleA: "QUÉ HACEMOS",
       titleB: "Y CUÁNTO CUESTA",
-      intro: "Un desglose claro de Vanta AI Studio: el trabajo que producimos, cómo trabajamos, qué obtenés y cuánto cuesta. Sin vueltas.",
+      intro: "Un desglose claro de Vantads AI Studio: el trabajo que producimos, cómo trabajamos, qué obtenés y cuánto cuesta. Sin vueltas.",
       whatLabel: "01 / Qué hacemos",
       howLabel: "02 / Cómo trabajamos",
       howIntro: "Esto es exactamente lo que pasa una vez que empezamos a trabajar juntos, del primer contacto a la entrega mensual.",
@@ -191,7 +191,7 @@ const NESTED = {
       contactLabel: "05 / Contacto",
       specs: [
         ["Formato", "Vertical 9:16, listo para Instagram"],
-        ["Duración", "Hasta 20 segundos por aviso"],
+        ["Duración", "Hasta 30 segundos por aviso"],
         ["Tiempo de entrega", "Primeros conceptos en 7 días"],
         ["Revisiones", "1–2 rondas por video, según el plan"],
         ["Garantía", "Garantía de devolución de 14 días"],
@@ -200,7 +200,7 @@ const NESTED = {
       start: "Empezar",
       contactIntro: "Contanos sobre tu marca, tu producto y tu campaña.",
       plans: [
-        { name: "Essential", volume: "10 videos / mes", price: "ARS $585.000 / mes", perVideo: "ARS $58.500 / video", features: "20 imágenes de producto · 10 anuncios de producto verticales · hasta 20 segundos · 1 ronda de revisiones · entrega 9:16 · tipografía de movimiento básica" },
+        { name: "Essential", volume: "10 videos / mes", price: "ARS $585.000 / mes", perVideo: "ARS $58.500 / video", features: "20 imágenes de producto · 10 anuncios de producto verticales · hasta 30 segundos · 1 ronda de revisiones · entrega 9:16 · tipografía de movimiento básica" },
         { name: "Growth", volume: "20 videos / mes", price: "ARS $877.500 / mes", perVideo: "ARS $43.875 / video", features: "35 imágenes de producto · 20 anuncios de producto verticales · múltiples hooks · 2 rondas de revisiones · motion design premium · dirección creativa · producción prioritaria" },
         { name: "Scale", volume: "+40 videos / mes", price: "Desde ARS $1.287.000 / mes", perVideo: "ARS $32.175 / video", features: "60 imágenes de producto · 40+ anuncios de producto verticales · múltiples productos · 2 rondas de revisiones · motion avanzado · soporte prioritario · exports listos para campaña" },
       ],
