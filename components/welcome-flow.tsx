@@ -121,9 +121,9 @@ function ContractStep({
         <div>
           <p className="eyebrow">02 / Agreement</p>
           <h1 className="mt-5 max-w-[720px] text-[clamp(36px,6.5vw,72px)] font-light leading-[.88] tracking-[-.07em] text-white">
-            MONTHLY CREATIVE
+            ACUERDO MENSUAL DE
             <br />
-            <span className="display-serif">SERVICES AGREEMENT</span>
+            <span className="display-serif">SERVICIOS CREATIVOS</span>
           </h1>
         </div>
         <button
@@ -151,7 +151,7 @@ function ContractStep({
         </div>
 
         <div
-          className="welcome-contract-scroll max-h-[min(62vh,640px)] space-y-8 overflow-y-auto px-5 py-8 sm:px-8"
+          className="welcome-contract-scroll max-h-[min(81vh,832px)] space-y-8 overflow-y-auto px-5 py-8 sm:px-8"
           data-lenis-prevent
         >
           {contract.sections.map((section) => (
@@ -216,7 +216,7 @@ function ContractStep({
         />
         <span className="text-[12px] leading-[1.6] text-[#cfcbc6]">
           He leído y acepto los términos y condiciones del{" "}
-          <span className="text-white">Monthly Creative Services Agreement</span> para el plan {client.plan} y el período{" "}
+          <span className="text-white">Acuerdo Mensual de Servicios Creativos</span> para el plan {client.plan} y el período{" "}
           {client.periodLabel}. Confirmo que esta aceptación digital tiene validez contractual.
         </span>
       </label>

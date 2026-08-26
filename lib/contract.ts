@@ -203,7 +203,7 @@ export function buildContract(client: WelcomeClient) {
 
   return {
     brand: "VANTADS AI STUDIO",
-    title: "MONTHLY CREATIVE SERVICES AGREEMENT",
+    title: "ACUERDO MENSUAL DE SERVICIOS CREATIVOS",
     meta: [
       { label: "Cliente", value: client.name },
       { label: "Plan", value: client.plan },
