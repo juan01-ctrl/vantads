@@ -1,7 +1,6 @@
 "use client";
 
-import { ArrowIcon } from "./icons";
-import { SiteHeader } from "./site-header";
+import { ShareHeaderWithLang } from "./share-header";
 import { useI18n } from "../lib/i18n";
 
 function SectionLabel({ children }: { children: React.ReactNode }) { return <p className="eyebrow">{children}</p>; }
@@ -13,8 +12,8 @@ export function InfoPage() {
   const specs = ta("info.specs") as unknown as [string, string][];
   const plans = ta("info.plans") as unknown as { name: string; volume: string; price: string; perVideo: string; features: string }[];
 
-  return <main className="site-shell grain pb-16 pt-28 sm:pt-36">
-    <SiteHeader />
+  return <main className="site-shell grain pb-16 pt-10 sm:pb-24 sm:pt-14">
+    <ShareHeaderWithLang />
 
     <section className="px-5 sm:px-8">
       <SectionLabel>{t("info.label")}</SectionLabel>
