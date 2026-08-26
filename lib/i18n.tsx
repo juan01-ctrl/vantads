@@ -61,7 +61,7 @@ const NESTED = {
       },
     },
     plans: {
-      essential: { name: "Essential", volume: "10 videos / month", description: "For brands that need a consistent monthly presence.", price: "$390 / month", perVideo: "$39 / video", discount: "Standard rate", cta: "Start Essential", features: ["20 product images", "10 vertical product ads", "Up to 30 seconds each", "1 revision round per video", "Instagram-ready 9:16 delivery", "Basic motion typography", "Standard delivery schedule"] },
+      essential: { name: "Essential", volume: "12 videos / month", description: "For brands that need a consistent monthly presence.", price: "$390 / month", perVideo: "$32.50 / video", discount: "Standard rate", cta: "Start Essential", features: ["20 product images", "12 vertical product ads", "Up to 30 seconds each", "1 revision round per video", "Instagram-ready 9:16 delivery", "Basic motion typography", "Standard delivery schedule"] },
       growth: { name: "Growth", volume: "20 videos / month", description: "For ecommerce brands actively testing and scaling creative.", price: "$585 / month", perVideo: "$29.25 / video", discount: "Save 25%", cta: "Choose Growth", features: ["35 product images", "20 vertical product ads", "Up to 30 seconds each", "Multiple hooks and variations", "2 revision rounds per video", "Premium motion design", "Creative direction included", "Priority production", "Campaign-ready exports"] },
       scale: { name: "Scale", volume: "+40 videos / month", description: "For brands that need a high volume of fresh campaign creatives.", price: "From $858 / month", perVideo: "$21.45 / video", discount: "Save 45%", cta: "Scale With Vantads", features: ["60 product images", "40+ vertical product ads", "Multiple products or campaigns", "Hook and concept variations", "2 revision rounds per video", "Advanced motion and editing", "Priority creative support", "Organized monthly production pipeline", "Paid social and organic formats"] },
     },
@@ -99,7 +99,7 @@ const NESTED = {
       start: "Start",
       contactIntro: "Tell us about your brand, product, and campaign.",
       plans: [
-        { name: "Essential", volume: "10 videos / month", price: "$390 / month", perVideo: "$39 / video", features: "20 product images · 10 vertical product ads · up to 30 seconds · 1 revision round · 9:16 delivery · basic motion typography" },
+        { name: "Essential", volume: "12 videos / month", price: "$390 / month", perVideo: "$32.50 / video", features: "20 product images · 12 vertical product ads · up to 30 seconds · 1 revision round · 9:16 delivery · basic motion typography" },
         { name: "Growth", volume: "20 videos / month", price: "$585 / month", perVideo: "$29.25 / video", features: "35 product images · 20 vertical product ads · multiple hooks · 2 revision rounds · premium motion design · creative direction · priority production" },
         { name: "Scale", volume: "+40 videos / month", price: "From $858 / month", perVideo: "$21.45 / video", features: "60 product images · 40+ vertical product ads · multiple products · 2 revision rounds · advanced motion · priority support · campaign-ready exports" },
       ],
@@ -162,7 +162,7 @@ const NESTED = {
       },
     },
     plans: {
-      essential: { name: "Essential", volume: "10 videos / mes", description: "Para marcas que necesitan una presencia mensual consistente.", price: "$390 / mes", perVideo: "$39 / video", discount: "Tarifa estándar", cta: "Empezar Essential", features: ["20 imágenes de producto", "10 anuncios de producto verticales", "Hasta 30 segundos cada uno", "1 ronda de revisiones por video", "Entrega 9:16 lista para Instagram", "Tipografía de movimiento básica", "Calendario de entrega estándar"] },
+      essential: { name: "Essential", volume: "12 videos / mes", description: "Para marcas que necesitan una presencia mensual consistente.", price: "$390 / mes", perVideo: "$32.50 / video", discount: "Tarifa estándar", cta: "Empezar Essential", features: ["20 imágenes de producto", "12 anuncios de producto verticales", "Hasta 30 segundos cada uno", "1 ronda de revisiones por video", "Entrega 9:16 lista para Instagram", "Tipografía de movimiento básica", "Calendario de entrega estándar"] },
       growth: { name: "Growth", volume: "20 videos / mes", description: "Para ecommerce que testea y escala creativos activamente.", price: "$585 / mes", perVideo: "$29.25 / video", discount: "Ahorrá 25%", cta: "Elegir Growth", features: ["35 imágenes de producto", "20 anuncios de producto verticales", "Hasta 30 segundos cada uno", "Múltiples hooks y variaciones", "2 rondas de revisiones por video", "Motion design premium", "Dirección creativa incluida", "Producción prioritaria", "Exports listos para campaña"] },
       scale: { name: "Scale", volume: "+40 videos / mes", description: "Para marcas que necesitan alto volumen de creativos frescos.", price: "Desde $858 / mes", perVideo: "$21.45 / video", discount: "Ahorrá 45%", cta: "Escalar con Vantads", features: ["60 imágenes de producto", "40+ anuncios de producto verticales", "Múltiples productos o campañas", "Variaciones de hook y concepto", "2 rondas de revisiones por video", "Motion y edición avanzada", "Soporte creativo prioritario", "Pipeline mensual organizado", "Formatos para pauta y orgánico"] },
     },
@@ -200,7 +200,7 @@ const NESTED = {
       start: "Empezar",
       contactIntro: "Contanos sobre tu marca, tu producto y tu campaña.",
       plans: [
-        { name: "Essential", volume: "10 videos / mes", price: "ARS $585.000 / mes", perVideo: "ARS $58.500 / video", features: "20 imágenes de producto · 10 anuncios de producto verticales · hasta 30 segundos · 1 ronda de revisiones · entrega 9:16 · tipografía de movimiento básica" },
+        { name: "Essential", volume: "12 videos / mes", price: "ARS $585.000 / mes", perVideo: "ARS $48.750 / video", features: "20 imágenes de producto · 12 anuncios de producto verticales · hasta 30 segundos · 1 ronda de revisiones · entrega 9:16 · tipografía de movimiento básica" },
         { name: "Growth", volume: "20 videos / mes", price: "ARS $877.500 / mes", perVideo: "ARS $43.875 / video", features: "35 imágenes de producto · 20 anuncios de producto verticales · múltiples hooks · 2 rondas de revisiones · motion design premium · dirección creativa · producción prioritaria" },
         { name: "Scale", volume: "+40 videos / mes", price: "Desde ARS $1.287.000 / mes", perVideo: "ARS $32.175 / video", features: "60 imágenes de producto · 40+ anuncios de producto verticales · múltiples productos · 2 rondas de revisiones · motion avanzado · soporte prioritario · exports listos para campaña" },
       ],
