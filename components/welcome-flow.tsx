@@ -322,7 +322,7 @@ function PaymentStep({ client, onBack }: { client: WelcomeClient; onBack: () => 
           <div className="mt-8 border border-[#d34667]/25 bg-[#d34667]/[0.07] p-4 sm:p-5">
             <p className="font-mono text-[9px] uppercase tracking-[.14em] text-[#e27b93]">Pesos argentinos</p>
             <p className="mt-2 text-[12px] leading-[1.6] text-[#e8dfe2]">
-              También podés pagar en pesos al tipo de cambio oficial del día del pago (valor compra).
+              También podés pagar en pesos al tipo de cambio oficial del día del pago (valor venta).
             </p>
           </div>
         </div>
