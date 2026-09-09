@@ -150,17 +150,17 @@ export function buildContract(client: WelcomeClient) {
       title: "Cancelación",
       paragraphs: [
         "El servicio contratado corresponde exclusivamente al período comprendido entre el 1 de septiembre y el 1 de octubre de 2026.",
-        "Una vez iniciado el período, el servicio no podrá ser cancelado unilateralmente con devolución del fee correspondiente, excepto cuando resulte aplicable la garantía de 14 días establecida a continuación.",
+        "Una vez iniciado el período, el servicio no podrá ser cancelado unilateralmente con devolución del fee correspondiente, excepto cuando resulte aplicable el periodo de prueba de 14 días establecido a continuación.",
         "La renovación de períodos posteriores no es automática y deberá ser confirmada por ambas partes.",
       ],
     },
     {
       number: "11",
-      title: "Garantía de 14 días",
+      title: "Periodo de prueba de 14 días",
       paragraphs: [
-        "Vantads ofrece una garantía de satisfacción de 14 días.",
-        "Si durante los primeros 14 días del período el Cliente considera que el servicio no cumple con sus expectativas, podrá solicitar la cancelación y el reembolso correspondiente de acuerdo con las condiciones de la garantía.",
-        "La garantía no aplica a trabajos adicionales previamente aprobados por el Cliente.",
+        "Vantads ofrece un periodo de prueba de 14 días desde el inicio del servicio.",
+        "Si durante los primeros 14 días el Cliente decide no continuar, podrá solicitar la cancelación y recibirá el reembolso del 50% del pago mensual correspondiente a ese período.",
+        "El periodo de prueba no aplica a trabajos adicionales previamente aprobados por el Cliente.",
       ],
     },
     {
