@@ -13,9 +13,12 @@ function ServiceCard({ index, className = "", title, text, icon }: { index: stri
 
 function ProcessStep({ number, title, text, active, current, onEnter }: { number: string; title: string; text: string; active: boolean; current: boolean; onEnter: () => void }) { return <li className={`timeline-item group ${active ? "active" : ""} ${current ? "current" : ""}`} onMouseEnter={onEnter}><span className="timeline-dot"><span className="timeline-dot-core" /></span><div className="timeline-body"><div className="flex items-center gap-3"><span className="timeline-step eyebrow">STEP {number}</span><span className="timeline-rule" /></div><h3 className="mt-4 text-[20px] tracking-[-.04em] text-white">{title}</h3><p className="mt-3 max-w-[380px] text-[12px] leading-[1.55] text-[#85827f]">{text}</p></div></li>; }
 
+type BillingCycle = "monthly" | "quarterly";
+
 export function HomePage({ children }: { children: ReactNode }) {
   const { t, ta } = useI18n();
   const [activeStep, setActiveStep] = useState<number>(-1);
+  const [billing, setBilling] = useState<BillingCycle>("quarterly");
   const services = ta("svc") as unknown as { title: string; text: string }[];
   const steps = ta("steps") as unknown as [string, string][];
   const plans = ["essential", "growth", "scale"] as const;
@@ -29,7 +32,43 @@ export function HomePage({ children }: { children: ReactNode }) {
 
     <section id="process" className="border-t border-white/[.07] px-5 py-20 sm:px-8 sm:py-28"><div className="grid gap-12 md:grid-cols-[1.1fr_2.9fr]"><div><SectionLabel>{t("process.label")}</SectionLabel><h2 className="mt-6 text-[clamp(48px,7vw,82px)] font-light leading-[.84] tracking-[-.08em] text-white">{t("process.titleA")}<br />{t("process.titleB")}<br /><span className="display-serif">{t("process.titleC")}</span></h2></div><ol className="timeline" onMouseLeave={() => setActiveStep(-1)}>{steps.map(([title, text], i) => <ProcessStep key={i} number={String(i + 1).padStart(2, "0")} title={title} text={text} active={i <= activeStep} current={i === activeStep} onEnter={() => setActiveStep(i)} />)}</ol></div></section>
 
-    <section id="pricing" className="border-t border-white/[.07] px-5 py-20 sm:px-8 sm:py-28"><div className="mb-12 flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><SectionLabel>{t("pricing.label")}</SectionLabel><h2 className="mt-6 max-w-[700px] text-[clamp(48px,7vw,86px)] font-light leading-[.84] tracking-[-.08em] text-white">{t("pricing.titleA")}<br /><span className="display-serif">{t("pricing.titleB")}</span></h2></div><p className="max-w-[230px] text-[12px] leading-[1.45] text-[#aaa7a3]">{t("pricing.sub")}</p></div><div className="mb-8 flex items-start gap-4 border border-white/[.1] bg-[#171215] p-5"><span className="mt-0.5 inline-flex shrink-0 items-center gap-2 rounded-full border border-[#d34667]/40 bg-[#d34667]/10 px-2.5 py-1 font-mono text-[9px] uppercase leading-none tracking-[.08em] text-[#df6b85]">{t("pricing.badge")}</span><div><p className="text-sm tracking-[-.02em] text-white">{t("pricing.badgeTitle")}</p><p className="mt-1 text-[12px] leading-[1.45] text-[#aaa7a3]">{t("pricing.badgeText")}</p></div></div><div className="grid gap-3 lg:grid-cols-3">{plans.map((name) => <PlanCard key={name} plan={name} />)}</div><p className="mt-8 text-[11px] text-[#85827f]">{t("pricing.custom")} <a href="#contact" className="text-white underline underline-offset-4">{t("pricing.customLink")}</a> {t("pricing.customTail")}</p></section>
+    <section id="pricing" className="pricing-stage border-t border-white/[.07] px-5 py-20 sm:px-8 sm:py-28">
+      <div className="mb-12 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <div>
+          <SectionLabel>{t("pricing.label")}</SectionLabel>
+          <h2 className="mt-6 max-w-[700px] text-[clamp(48px,7vw,86px)] font-light leading-[.84] tracking-[-.08em] text-white">
+            {t("pricing.titleA")}
+            <br />
+            <span className="display-serif">{t("pricing.titleB")}</span>
+          </h2>
+        </div>
+        <p className="max-w-[230px] text-[12px] leading-[1.45] text-[#aaa7a3]">{t("pricing.sub")}</p>
+      </div>
+      <div className="mb-8 flex items-start gap-4 border border-white/[.08] bg-[#120f11]/80 p-5 backdrop-blur-sm">
+        <span className="mt-0.5 inline-flex shrink-0 items-center gap-2 rounded-full border border-[#d34667]/40 bg-[#d34667]/10 px-2.5 py-1 font-mono text-[9px] uppercase leading-none tracking-[.08em] text-[#df6b85]">
+          {t("pricing.badge")}
+        </span>
+        <div>
+          <p className="text-sm tracking-[-.02em] text-white">{t("pricing.badgeTitle")}</p>
+          <p className="mt-1 text-[12px] leading-[1.45] text-[#aaa7a3]">{t("pricing.badgeText")}</p>
+        </div>
+      </div>
+      <div className="flex justify-center">
+        <BillingToggle value={billing} onChange={setBilling} />
+      </div>
+      <div className="price-grid mt-10 grid gap-4 lg:grid-cols-3 lg:gap-5">
+        {plans.map((name) => (
+          <PlanCard key={name} plan={name} billing={billing} />
+        ))}
+      </div>
+      <p className="mt-10 text-center text-[11px] text-[#85827f] sm:text-left">
+        {t("pricing.custom")}{" "}
+        <a href="#contact" className="text-white underline underline-offset-4">
+          {t("pricing.customLink")}
+        </a>{" "}
+        {t("pricing.customTail")}
+      </p>
+    </section>
 
     <section className="border-t border-white/[.07] px-5 py-20 sm:px-8 sm:py-24"><div className="grid gap-12 md:grid-cols-[1.1fr_2.9fr]"><div><SectionLabel>{t("signal.label")}</SectionLabel><h2 className="mt-6 text-[clamp(48px,7vw,78px)] font-light leading-[.84] tracking-[-.08em] text-white">{t("signal.titleA")}<br />{t("signal.titleB")} <span className="display-serif">{t("signal.titleC")}</span></h2></div><div className="grid gap-px bg-white/[.1] sm:grid-cols-2"><div className="bg-[#111] p-6"><p className="eyebrow text-[#d34667]">{t("signal.adv")}</p><p className="mt-12 text-2xl whitespace-pre-line leading-[1.05] tracking-[-.06em] text-white">{t("signal.advText")}</p></div><div className="bg-[#111] p-6"><blockquote className="mt-5 text-[17px] leading-[1.2] tracking-[-.04em] text-white">{t("signal.q1")}</blockquote><p className="eyebrow mt-10">— {t("signal.q1by")}</p></div><div className="bg-[#111] p-6 sm:col-span-2"><blockquote className="max-w-[570px] text-[17px] leading-[1.2] tracking-[-.04em] text-white">{t("signal.q2")}</blockquote><p className="eyebrow mt-8">— {t("signal.q2by")}</p></div></div></div></section>
 
@@ -39,62 +78,112 @@ export function HomePage({ children }: { children: ReactNode }) {
   </main>;
 }
 
-function PlanCard({ plan }: { plan: "essential" | "growth" | "scale" }) {
+function BillingToggle({ value, onChange }: { value: BillingCycle; onChange: (next: BillingCycle) => void }) {
+  const { t } = useI18n();
+  const options: { id: BillingCycle; label: string }[] = [
+    { id: "monthly", label: String(t("pricing.billingMonthly")) },
+    { id: "quarterly", label: String(t("pricing.billingQuarterly")) },
+  ];
+
+  return (
+    <div className="billing-toggle" role="group" aria-label="Billing period">
+      {options.map((option) => {
+        const active = value === option.id;
+        return (
+          <button
+            key={option.id}
+            type="button"
+            aria-pressed={active}
+            onClick={() => onChange(option.id)}
+            className={`billing-toggle__btn ${active ? "billing-toggle__btn--active" : ""}`}
+          >
+            {option.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function PlanCard({ plan, billing }: { plan: "essential" | "growth" | "scale"; billing: BillingCycle }) {
   const { t, ta } = useI18n();
   const featured = plan === "growth";
+  const quarterly = billing === "quarterly";
   const p = {
     name: t(`plans.${plan}.name`),
     volume: t(`plans.${plan}.volume`),
     description: t(`plans.${plan}.description`),
-    price: t(`plans.${plan}.price`),
+    priceMonthly: t(`plans.${plan}.priceMonthly`),
+    priceQuarterly: t(`plans.${plan}.priceQuarterly`),
+    billedQuarterly: t(`plans.${plan}.billedQuarterly`),
+    save: t(`plans.${plan}.save`),
     cta: t(`plans.${plan}.cta`),
     features: ta(`plans.${plan}.features`) as unknown as string[],
   };
+  const price = quarterly ? p.priceQuarterly : p.priceMonthly;
+  const period = quarterly ? t("pricing.perMo") : t("pricing.perMonth");
   const subject = encodeURIComponent(String(t("pricing.mail.subject")).replace("{plan}", p.name));
   const body = encodeURIComponent(String(t("pricing.mail.body")).replace("{plan}", p.name).replace("{volume}", p.volume));
   const mailto = `mailto:hello@vantads.studio?subject=${subject}&body=${body}`;
 
   return (
     <article
-      className={`price-card group relative flex flex-col border p-6 sm:p-7 ${
-        featured
-          ? "border-[#d34667]/45 bg-[#150f12] shadow-[0_0_0_1px_rgba(211,70,103,.08)]"
-          : "border-white/[.09] bg-[#111111]"
+      className={`price-card group relative flex flex-col border p-6 sm:p-8 ${
+        featured ? "price-card--featured border-[#d34667]/55" : "price-card--quiet border-white/[.09]"
       }`}
     >
       {featured && <span className="price-notch">{t("pricing.popular")}</span>}
       <div className="flex items-center justify-between gap-3">
-        <p className="eyebrow">{p.name}</p>
+        <p className={`eyebrow ${featured ? "text-[#df6b85]" : ""}`}>{p.name}</p>
         <span className="price-index font-mono text-[10px] tracking-[.14em] text-[#5a5753]">
           {featured ? "BEST" : plan === "essential" ? "START" : "MAX"}
         </span>
       </div>
-      <div className="mt-9">
-        <p className="price-amount font-mono text-[30px] leading-none tracking-[-.03em] text-white sm:text-[34px]">
-          {p.price}
-          <span className="ml-1.5 text-[11px] uppercase tracking-[.04em] text-[#8b8986]">USD</span>
+      <div className="mt-10">
+        <p key={`${plan}-${billing}-price`} className="price-amount price-fade font-mono text-white">
+          {price}
+          <span className="ml-2 align-top text-[11px] uppercase tracking-[.08em] text-[#8b8986]">USD</span>
         </p>
-        <p className="mt-2 font-mono text-[9px] uppercase tracking-[.12em] text-[#8b8986]">{t("pricing.perMonth")}</p>
+        <div className="mt-3 flex min-h-[28px] flex-wrap items-center gap-2.5">
+          <p className="font-mono text-[10px] uppercase tracking-[.14em] text-[#8b8986]">{period}</p>
+          <span
+            className={`price-save-badge transition-all duration-300 ${
+              quarterly ? "opacity-100" : "pointer-events-none opacity-0"
+            }`}
+            aria-hidden={!quarterly}
+          >
+            {p.save}
+          </span>
+        </div>
+        <div className="mt-2.5 min-h-[18px]" aria-hidden={!quarterly}>
+          <p
+            className={`font-mono text-[10px] leading-[1.45] tracking-[.02em] text-[#8b8986] transition-opacity duration-300 ${
+              quarterly ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {p.billedQuarterly}
+          </p>
+        </div>
       </div>
-      <p className="mt-5 text-[12px] leading-[1.45] text-[#b6b3ae]">{p.volume}</p>
+      <p className="mt-6 text-[12px] leading-[1.45] text-[#b6b3ae]">{p.volume}</p>
       <p className="mt-3 min-h-[38px] text-[12px] leading-[1.5] text-[#a3a09b]">{p.description}</p>
-      <ul className="mt-6 space-y-2.5 border-t border-white/[.08] pt-5">
+      <ul className="mt-7 space-y-3 border-t border-white/[.08] pt-6">
         {p.features.map((feature) => (
-          <li key={feature} className="flex gap-2.5 text-[11px] leading-snug text-[#b6b3ae]">
-            <svg className="price-check mt-px flex-none text-[#d34667]" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <li key={feature} className="flex gap-2.5 text-[12px] leading-snug text-[#c4c1bc]">
+            <svg className="price-check mt-0.5 flex-none text-[#d34667]" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M2 6.5 4.7 9 10 3.5" stroke="currentColor" strokeWidth="1.3px" />
             </svg>
             <span>{feature}</span>
           </li>
         ))}
       </ul>
-      <div className="mt-auto pt-7">
+      <div className="mt-auto pt-8">
         <a
           href={mailto}
-          className={`flex items-center justify-between gap-3 px-4 py-3 text-[11px] uppercase tracking-[.1em] transition-all duration-300 ${
+          className={`flex items-center justify-between gap-3 px-4 py-3.5 text-[11px] uppercase tracking-[.12em] transition-all duration-300 ${
             featured
-              ? "bg-[#d34667] text-white hover:bg-[#e05f80] hover:shadow-[0_10px_40px_-10px_rgba(211,70,103,.7)]"
-              : "border border-white/20 text-white hover:border-[#d34667]"
+              ? "bg-[#d34667] text-white shadow-[0_14px_40px_-14px_rgba(211,70,103,.75)] hover:bg-[#e05f80] hover:shadow-[0_18px_48px_-12px_rgba(211,70,103,.85)]"
+              : "border border-white/18 text-white hover:border-[#d34667] hover:bg-white/[.03]"
           }`}
         >
           {p.cta}

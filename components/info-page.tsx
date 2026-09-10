@@ -10,7 +10,7 @@ export function InfoPage() {
   const svc = ta("svc") as unknown as { title: string; text: string }[];
   const process = ta("info.process") as unknown as [string, string, string][];
   const specs = ta("info.specs") as unknown as [string, string][];
-  const plans = ta("info.plans") as unknown as { name: string; volume: string; price: string; features: string }[];
+  const plans = ta("info.plans") as unknown as { name: string; volume: string; price: string; priceAlt: string; features: string }[];
 
   return <main className="site-shell grain pb-16 pt-10 sm:pb-24 sm:pt-14">
     <ShareHeaderWithLang />
@@ -52,6 +52,7 @@ export function InfoPage() {
             </div>
             <div className="sm:pl-8 sm:text-right">
               <p className="font-mono text-xl leading-none text-white">{p.price}</p>
+              <p className="mt-2 font-mono text-[10px] uppercase tracking-[.06em] text-[#8b8986]">{p.priceAlt}</p>
               <a
                 href={`mailto:hello@vantads.studio?subject=${encodeURIComponent(String(t("pricing.mail.subject")).replace("{plan}", p.name))}&body=${encodeURIComponent(String(t("pricing.mail.body")).replace("{plan}", p.name).replace("{volume}", p.volume))}`}
                 className="mt-5 inline-flex items-center gap-2 text-[10px] uppercase tracking-[.1em] text-white underline underline-offset-4 hover:text-[#d34667]"
