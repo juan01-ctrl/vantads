@@ -56,7 +56,7 @@ export function HomePage({ children }: { children: ReactNode }) {
       <div className="flex justify-center">
         <BillingToggle value={billing} onChange={setBilling} />
       </div>
-      <div className="price-grid mt-10 grid gap-4 lg:grid-cols-3 lg:gap-5">
+      <div className="price-grid mt-16 grid gap-4 sm:mt-20 lg:mt-24 lg:grid-cols-3 lg:gap-5">
         {plans.map((name) => (
           <PlanCard key={name} plan={name} billing={billing} />
         ))}
