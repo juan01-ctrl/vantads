@@ -47,15 +47,60 @@ function PlanCard({ plan }: { plan: "essential" | "growth" | "scale" }) {
     volume: t(`plans.${plan}.volume`),
     description: t(`plans.${plan}.description`),
     price: t(`plans.${plan}.price`),
-    perVideo: t(`plans.${plan}.perVideo`),
-    discount: t(`plans.${plan}.discount`),
     cta: t(`plans.${plan}.cta`),
     features: ta(`plans.${plan}.features`) as unknown as string[],
   };
-  const isStandard = p.discount === t("plans.essential.discount");
-  const cleanPrice = p.price.replace(/\s*\/\s*(month|mes)$/i, "");
   const subject = encodeURIComponent(String(t("pricing.mail.subject")).replace("{plan}", p.name));
   const body = encodeURIComponent(String(t("pricing.mail.body")).replace("{plan}", p.name).replace("{volume}", p.volume));
   const mailto = `mailto:hello@vantads.studio?subject=${subject}&body=${body}`;
-  return <article className={`price-card group relative flex flex-col border p-6 sm:p-7 ${featured ? "border-[#d34667]/40 bg-[#150f12]" : "border-white/[.09] bg-[#111111]"}`}>{featured && <span className="price-notch">{t("pricing.popular")}</span>}<div className="flex items-center justify-between gap-3"><p className="eyebrow">{p.name}</p><span className={`price-save inline-flex items-center rounded-full border px-2.5 py-1 font-mono text-[9px] uppercase tracking-[.08em] ${isStandard ? "border-white/10 bg-white/5 text-[#8b8986]" : "border-[#d34667]/50 bg-[#d34667]/10 text-[#e27b93]"}`}>{p.discount}</span></div><div className="mt-9 flex items-baseline justify-between"><h3 className="text-xl font-medium tracking-[-.03em] text-white sm:text-2xl">{p.volume}</h3><span className="price-index font-mono text-[10px] tracking-[.14em] text-[#5a5753]">{featured ? "BEST" : plan === "essential" ? "START" : "MAX"}</span></div><p className="mt-3 min-h-[38px] text-[12px] leading-[1.5] text-[#a3a09b]">{p.description}</p><div className="mt-6 flex items-end justify-between border-t border-white/[.08] pt-5"><div><p className="price-amount font-mono text-2xl leading-none text-white sm:text-[26px]">{cleanPrice}<span className="ml-1 text-[11px] uppercase tracking-[.04em] text-[#8b8986]">USD</span></p><p className="mt-1.5 font-mono text-[9px] uppercase tracking-[.12em] text-[#8b8986]">{t("pricing.perMonth")}</p></div><p className="price-per font-mono text-[10px] uppercase tracking-[.06em] text-[#d34667]">{p.perVideo}</p></div><ul className="mt-6 space-y-2.5 border-t border-white/[.08] pt-5">{p.features.map((feature) => <li key={feature} className="flex gap-2.5 text-[11px] leading-snug text-[#b6b3ae]"><svg className="price-check mt-px flex-none text-[#d34667]" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.5 4.7 9 10 3.5" stroke="currentColor" strokeWidth="1.3px" /></svg><span>{feature}</span></li>)}</ul><a href={mailto} className={`mt-7 flex items-center justify-between gap-3 px-4 py-3 text-[11px] uppercase tracking-[.1em] transition-all duration-300 ${featured ? "bg-[#d34667] text-white hover:bg-[#e05f80] hover:shadow-[0_10px_40px_-10px_rgba(211,70,103,.7)]" : "border border-white/20 text-white hover:border-[#d34667]"}`}>{p.cta}<ArrowIcon className="h-4 w-4" /></a></article>;
+
+  return (
+    <article
+      className={`price-card group relative flex flex-col border p-6 sm:p-7 ${
+        featured
+          ? "border-[#d34667]/45 bg-[#150f12] shadow-[0_0_0_1px_rgba(211,70,103,.08)]"
+          : "border-white/[.09] bg-[#111111]"
+      }`}
+    >
+      {featured && <span className="price-notch">{t("pricing.popular")}</span>}
+      <div className="flex items-center justify-between gap-3">
+        <p className="eyebrow">{p.name}</p>
+        <span className="price-index font-mono text-[10px] tracking-[.14em] text-[#5a5753]">
+          {featured ? "BEST" : plan === "essential" ? "START" : "MAX"}
+        </span>
+      </div>
+      <div className="mt-9">
+        <p className="price-amount font-mono text-[30px] leading-none tracking-[-.03em] text-white sm:text-[34px]">
+          {p.price}
+          <span className="ml-1.5 text-[11px] uppercase tracking-[.04em] text-[#8b8986]">USD</span>
+        </p>
+        <p className="mt-2 font-mono text-[9px] uppercase tracking-[.12em] text-[#8b8986]">{t("pricing.perMonth")}</p>
+      </div>
+      <p className="mt-5 text-[12px] leading-[1.45] text-[#b6b3ae]">{p.volume}</p>
+      <p className="mt-3 min-h-[38px] text-[12px] leading-[1.5] text-[#a3a09b]">{p.description}</p>
+      <ul className="mt-6 space-y-2.5 border-t border-white/[.08] pt-5">
+        {p.features.map((feature) => (
+          <li key={feature} className="flex gap-2.5 text-[11px] leading-snug text-[#b6b3ae]">
+            <svg className="price-check mt-px flex-none text-[#d34667]" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 6.5 4.7 9 10 3.5" stroke="currentColor" strokeWidth="1.3px" />
+            </svg>
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-auto pt-7">
+        <a
+          href={mailto}
+          className={`flex items-center justify-between gap-3 px-4 py-3 text-[11px] uppercase tracking-[.1em] transition-all duration-300 ${
+            featured
+              ? "bg-[#d34667] text-white hover:bg-[#e05f80] hover:shadow-[0_10px_40px_-10px_rgba(211,70,103,.7)]"
+              : "border border-white/20 text-white hover:border-[#d34667]"
+          }`}
+        >
+          {p.cta}
+          <ArrowIcon className="h-4 w-4" />
+        </a>
+      </div>
+    </article>
+  );
 }

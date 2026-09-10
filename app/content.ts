@@ -20,7 +20,29 @@ export const projects: Project[] = [
 ];
 
 export const pricingPlans = [
-  { name: "Essential", volume: "12 videos / month", description: "For brands that need a consistent monthly presence.", price: "$390 / month", perVideo: "$32.50 / video", discount: "Standard rate", cta: "Start Essential", features: ["20 product images", "12 vertical product ads", "Up to 30 seconds each", "1 product or campaign focus", "1 revision round per video", "Instagram-ready 9:16 delivery", "Basic motion typography", "Standard delivery schedule"] },
-  { name: "Growth", volume: "20 videos / month", description: "For ecommerce brands actively testing and scaling creative.", price: "$585 / month", perVideo: "$29.25 / video", discount: "Save 25%", cta: "Choose Growth", featured: true, features: ["35 product images", "20 vertical product ads", "Up to 30 seconds each", "Multiple hooks and variations", "2 revision rounds per video", "Premium motion design", "Creative direction included", "Priority production", "Campaign-ready exports"] },
-  { name: "Scale", volume: "+40 videos / month", description: "For brands that need a high volume of fresh campaign creatives.", price: "From $858 / month", perVideo: "$21.45 / video", discount: "Save 45%", cta: "Scale With Vantads", features: ["60 product images", "40+ vertical product ads", "Multiple products or campaigns", "Hook and concept variations", "2 revision rounds per video", "Advanced motion and editing", "Priority creative support", "Organized monthly production pipeline", "Paid social and organic formats"] },
+  {
+    name: "Essential",
+    volume: "8 videos / month",
+    description: "The easiest entry into a monthly creative partnership.",
+    price: "$460",
+    cta: "Start Essential",
+    features: ["8 videos per month", "12 product photos", "Creative direction", "Multiple concepts & hooks", "2 revision rounds"],
+  },
+  {
+    name: "Growth",
+    volume: "12 videos / month",
+    description: "The best-value monthly partnership for brands testing and scaling creative.",
+    price: "$620",
+    cta: "Choose Growth",
+    featured: true,
+    features: ["12 videos per month", "20 product photos", "Creative direction", "Multiple concepts & hooks", "Premium motion & editing", "2 revision rounds"],
+  },
+  {
+    name: "Scale",
+    volume: "16+ videos / month",
+    description: "For brands that need consistent high-volume creative — pricing starts at $790 and scales with production.",
+    price: "$790+",
+    cta: "Scale With Vantads",
+    features: ["16+ videos per month", "36 product photos", "Higher creative volume", "Multiple concepts & hooks", "Premium motion & editing", "Priority production", "2 revision rounds"],
+  },
 ];

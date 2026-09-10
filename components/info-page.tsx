@@ -10,7 +10,7 @@ export function InfoPage() {
   const svc = ta("svc") as unknown as { title: string; text: string }[];
   const process = ta("info.process") as unknown as [string, string, string][];
   const specs = ta("info.specs") as unknown as [string, string][];
-  const plans = ta("info.plans") as unknown as { name: string; volume: string; price: string; perVideo: string; features: string }[];
+  const plans = ta("info.plans") as unknown as { name: string; volume: string; price: string; features: string }[];
 
   return <main className="site-shell grain pb-16 pt-10 sm:pb-24 sm:pt-14">
     <ShareHeaderWithLang />
@@ -41,7 +41,26 @@ export function InfoPage() {
         <p className="font-mono text-[9px] uppercase tracking-[.12em] text-[#8a8986]">{t("info.priceNote")}</p>
       </div>
       <div className="mt-10 space-y-px bg-white/[.07]">
-        {plans.map((p) => <div key={p.name} className="grid gap-4 bg-[#111] p-6 sm:grid-cols-[1fr_auto] sm:items-start sm:py-8"><div><div className="flex items-center gap-3"><h4 className="text-[18px] tracking-[-.02em] text-white">{p.name}</h4><span className="eyebrow text-[#8a8986]">{p.volume}</span></div><p className="mt-3 max-w-[62ch] text-[12px] leading-[1.55] text-[#8a8986]">{p.features}</p></div><div className="sm:text-right sm:pl-8"><p className="font-mono text-xl leading-none text-white">{p.price}</p><p className="mt-2 font-mono text-[10px] uppercase tracking-[.08em] text-[#d34667]">{p.perVideo}</p><a href={`mailto:hello@vantads.studio?subject=${encodeURIComponent(String(t("pricing.mail.subject")).replace("{plan}", p.name))}&body=${encodeURIComponent(String(t("pricing.mail.body")).replace("{plan}", p.name).replace("{volume}", p.volume))}`} className="mt-5 inline-flex items-center gap-2 text-[10px] uppercase tracking-[.1em] text-white underline underline-offset-4 hover:text-[#d34667]">{t("info.start")} →</a></div></div>)}
+        {plans.map((p) => (
+          <div key={p.name} className="grid gap-4 bg-[#111] p-6 sm:grid-cols-[1fr_auto] sm:items-start sm:py-8">
+            <div>
+              <div className="flex items-center gap-3">
+                <h4 className="text-[18px] tracking-[-.02em] text-white">{p.name}</h4>
+                <span className="eyebrow text-[#8a8986]">{p.volume}</span>
+              </div>
+              <p className="mt-3 max-w-[62ch] text-[12px] leading-[1.55] text-[#8a8986]">{p.features}</p>
+            </div>
+            <div className="sm:pl-8 sm:text-right">
+              <p className="font-mono text-xl leading-none text-white">{p.price}</p>
+              <a
+                href={`mailto:hello@vantads.studio?subject=${encodeURIComponent(String(t("pricing.mail.subject")).replace("{plan}", p.name))}&body=${encodeURIComponent(String(t("pricing.mail.body")).replace("{plan}", p.name).replace("{volume}", p.volume))}`}
+                className="mt-5 inline-flex items-center gap-2 text-[10px] uppercase tracking-[.1em] text-white underline underline-offset-4 hover:text-[#d34667]"
+              >
+                {t("info.start")} →
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
 
