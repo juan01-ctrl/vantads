@@ -44,8 +44,8 @@ export function HomePage({ children }: { children: ReactNode }) {
         </div>
         <p className="max-w-[230px] text-[12px] leading-[1.45] text-[#aaa7a3]">{t("pricing.sub")}</p>
       </div>
-      <div className="mb-8 flex items-start gap-4 border border-white/[.08] bg-[#120f11]/80 p-5 backdrop-blur-sm">
-        <span className="mt-0.5 inline-flex shrink-0 items-center gap-2 rounded-full border border-[#d34667]/40 bg-[#d34667]/10 px-2.5 py-1 font-mono text-[9px] uppercase leading-none tracking-[.08em] text-[#df6b85]">
+      <div className="mb-8 flex flex-col gap-3 border border-white/[.08] bg-[#120f11]/80 p-5 backdrop-blur-sm">
+        <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#d34667]/40 bg-[#d34667]/10 px-2.5 py-1 font-mono text-[9px] uppercase leading-none tracking-[.08em] text-[#df6b85]">
           {t("pricing.badge")}
         </span>
         <div>
