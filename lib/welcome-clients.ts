@@ -13,19 +13,19 @@ export type WelcomeClient = {
 };
 
 export const WELCOME_CLIENTS: Record<string, WelcomeClient> = {
-  soymasqueaccesorios: {
-    slug: "soymasqueaccesorios",
-    name: "Soy Más Que Accesorios",
-    plan: "Essential",
-    periodStart: "1 de septiembre de 2026",
-    periodEnd: "1 de octubre de 2026",
-    periodLabel: "01/09/2026 – 01/10/2026",
-    feeTotal: 390,
-    feeInitial: 195,
-    feeFinal: 195,
-    feeInitialDue: "antes del inicio del período",
-    feeFinalDue: "1 de octubre de 2026",
-  },
+  // soymasqueaccesorios: {
+  //   slug: "soymasqueaccesorios",
+  //   name: "Soy Más Que Accesorios",
+  //   plan: "Essential",
+  //   periodStart: "1 de septiembre de 2026",
+  //   periodEnd: "1 de octubre de 2026",
+  //   periodLabel: "01/09/2026 – 01/10/2026",
+  //   feeTotal: 390,
+  //   feeInitial: 195,
+  //   feeFinal: 195,
+  //   feeInitialDue: "antes del inicio del período",
+  //   feeFinalDue: "1 de octubre de 2026",
+  // },
 };
 
 export const PAYMENT_DETAILS = {
