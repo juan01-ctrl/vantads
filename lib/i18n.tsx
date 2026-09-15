@@ -173,7 +173,7 @@ const NESTED = {
       ["Dirección creativa", "Definimos el ángulo del producto, la audiencia, las referencias, el mood y la identidad visual."],
       ["Conceptos", "Desarrollamos múltiples hooks, escenas, tratamientos visuales y direcciones de movimiento."],
       ["Producción", "Generamos, refinamos, animamos, editamos y pulimos cada creativo."],
-      ["Entrega", "Recibes anuncios verticales listos para publicar, organizados y preparados para testear."],
+      ["Entrega", "Recibís anuncios verticales listos para publicar, organizados y preparados para testear."],
     ],
     pricing: {
       label: "04 / Planes creativos mensuales",
@@ -185,7 +185,7 @@ const NESTED = {
       badgeTitle: "Periodo de prueba de 14 días",
       badgeText: "Probá el servicio durante dos semanas. Si decidís no continuar, te devolvemos el 50% de tu pago mensual.",
       popular: "Más Popular",
-      custom: "¿Necesitas un volumen a medida, una campaña de lanzamiento o un proyecto puntual?",
+      custom: "¿Necesitás un volumen a medida, una campaña de lanzamiento o un proyecto puntual?",
       customLink: "Contactanos",
       customTail: "para un plan de producción a medida.",
       billingMonthly: "Mensual",
@@ -232,8 +232,8 @@ const NESTED = {
         features: ["16+ videos por mes", "36 fotos de producto por mes", "Mayor volumen creativo", "Múltiples conceptos y hooks", "Motion y edición premium", "Producción prioritaria", "2 rondas de revisiones"],
       },
     },
-    signal: { label: "05 / La señal", titleA: "CREATIVO", titleB: "QUE", titleC: "RINDE", tag: "La ventaja", advText: "Producción creativa más rápida.\nMás variaciones para testear.\nMenos overhead.", q1: "“Vantads nos ayudó a convertir un solo producto en un mes completo de creativo premium.”", q1by: "— Fundador de ecommerce", q2: "“Los videos finales parecían una producción de campaña completa, sin el proceso tradicional.”", q2by: "— Director de marca" },
-    contact: { label: "06 / Empezar un proyecto", titleA: "HAGAMOS", titleB: "TU PRODUCTO", titleC: "IMPESIBLE", titleD: "DE IGNORAR", sub: "Contanos sobre tu marca, tu producto y tu campaña. Lo convertimos en contenido visual premium construido para atraer la atención.", cta: "Empezar un proyecto", view: "Ver nuestro trabajo" },
+    signal: { label: "05 / La señal", titleA: "CREATIVO", titleB: "QUE", titleC: "RINDE", adv: "La ventaja", advText: "Producción creativa más rápida.\nMás variaciones para testear.\nMenos overhead.", q1: "“Vantads nos ayudó a convertir un solo producto en un mes completo de creativo premium.”", q1by: "— Fundador de ecommerce", q2: "“Los videos finales parecían una producción de campaña completa, sin el proceso tradicional.”", q2by: "— Director de marca" },
+    contact: { label: "06 / Empezar un proyecto", titleA: "HAGAMOS", titleB: "TU PRODUCTO", titleC: "IMPOSIBLE", titleD: "DE IGNORAR", sub: "Contanos sobre tu marca, tu producto y tu campaña. Lo convertimos en contenido visual premium construido para atraer la atención.", cta: "Empezar un proyecto", view: "Ver nuestro trabajo" },
     footer: { addresses: "Vantads AI · Buenos Aires · Disponible mundialmente", instagram: "Instagram" },
     modal: { phoneView: "Vista móvil", clickToOpen: "Tocá para abrir la vista móvil", open: "Abrir preview", close: "Cerrar preview" },
     info: {
